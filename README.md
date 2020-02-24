@@ -27,9 +27,25 @@ In this project you will create a login page and request a token from the server
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain what a token is used for.
+
+-----> A token is used for authentication, to identify/verify a user and render data accordingly for that specific user or type of user. Ex. Logged in with friends on  Facebook versus the basic page with login if either not a user or not logged in.  It's stored in cache so that you're able to revisit the page and still be logged in without having to login each time.
+
 - [ ] What steps can you take in your web apps to keep your data secure?
+
+-----> Implement security by verification through tokens and/or axios requests with headers, and also writing front and back end code so that there aren't ways to dump that information; it only allows verified users to the data they're allowed to create/read/update/delete.
+
 - [ ] Describe how web servers work.
+
+-----> Web servers distribute data via C.R.U.D. operations.  Requests are made to the server (req) and based on the qualifications necessary for that request in the server code, it will either approve or deny the requests by responding with a specified response (res).  Web servers are APIs that will feed data based on the nature of the request to that server/API.
+
 - [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+
+-----> CRUD HTTP Methods:
+      --> Create --> Post method
+      --> Read --> Get method
+      --> Update --> Put method
+      --> Delete/Destroy --> Delete method
+
 
 
 ## Project Set Up
