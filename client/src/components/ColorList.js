@@ -7,7 +7,6 @@ const initialColor = {
 };
 
 const ColorList = props => {
-  console.log(props.colors);
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
 
@@ -17,7 +16,6 @@ const ColorList = props => {
   };
 
   const saveEdit = e => {
-    console.log(colorToEdit);
     const id = colorToEdit.id;
     axiosWithAuth()
       .put(`http://localhost:5000/api/colors/${id}`, colorToEdit)
@@ -26,7 +24,14 @@ const ColorList = props => {
   };
 
   const deleteColor = color => {
-    // make a delete request to delete this color
+    const confirmed = window.confirm('Are you sure you want to delete this color?');
+    if (confirmed) {
+      axiosWithAuth()
+      .delete(`http://localhost:5000/api/colors/${color.id}`)
+      .then(window.alert('Success!  Color deleted!'))
+      .catch(err => console.log(err));
+    }
+    window.location.reload();
   };
 
   return (
@@ -83,6 +88,15 @@ const ColorList = props => {
         </form>
       )}
       <div className="spacer" />
+        {/* <form>
+          <input 
+            name = 
+          />
+
+          <input 
+          
+          />
+        </form> */}
       {/* stretch - build another form here to add a color */}
     </div>
   );
